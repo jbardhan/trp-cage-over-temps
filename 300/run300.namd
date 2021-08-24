@@ -23,8 +23,8 @@ XSTFreq                 100
 
 
 # OUTPUT AND RESTART
-outputname              run300
-restartname             run300
+outputname              run$temp
+restartname             run$temp
 binaryoutput            yes
 binaryrestart           yes
 
@@ -115,4 +115,5 @@ commotion               no
 
 #runFEP 0 1 0.02 $numSteps
 
-run 100000
+reinitvels $temp
+run 1000000
