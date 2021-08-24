@@ -1,0 +1,14 @@
+package require psfgen
+topology $env(HOME)/repos/Parameters/top_all22_prot_cmap.inp
+topology $env(HOME)/repos/Parameters/neutralsod.rtf
+
+segment P {
+auto angles dihedrals
+pdb 1L2Y.pdb
+}
+coordpdb 1L2Y.pdb P
+guesscoord
+writepdb psfgenOutput.pdb
+writepsf psfgenOutput.psf
+
+quit

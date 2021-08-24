@@ -1,0 +1,14 @@
+mol new psfgenOutput.psf
+mol addfile psfgenOutput.pdb
+
+for {set i 1} { $i < 20 } {incr i } {
+set sel [atomselect top "resid $i and name CA"]
+$sel set phi 180
+$sel set psi 180
+}
+
+set all [atomselect top all]
+$all writepdb extended.pdb
+$all writepsf extended.psf
+
+quit
