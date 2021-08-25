@@ -6,20 +6,22 @@ exclude                 scaled1-4
 
 
 # TOPOLOGY
-structure               solvated.psf
+structure               ../base/solvated.psf
 
 # INITIAL CONDITIONS
-coordinates             solvated.pdb
-bincoordinates          equil.coor
-binvelocities           equil.vel
-extendedSystem          equil.xsc
+coordinates             ../base/solvated.pdb
+bincoordinates          ../base/equil.coor
+binvelocities           ../base/equil.vel
+extendedSystem          ../base/equil.xsc
 
 # OUTPUT FREQUENCIES
-outputenergies          100
-outputtiming            100
-outputpressure          100
-restartfreq             100
-XSTFreq                 100
+outputenergies          1000
+outputtiming            1000
+outputpressure          1000
+restartfreq             1000
+XSTFreq                 1000
+dcdfile 		5000
+dcdfreq			5000
 
 
 # OUTPUT AND RESTART
