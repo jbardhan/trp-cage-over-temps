@@ -1,0 +1,21 @@
+mol new ../unfolded/solvated.psf
+mol addfile run450.dcd  waitfor all
+
+set wholebox [atomselect top "all"]
+set protein [atomselect top "protein"]
+
+set n [molinfo top get numframes]
+
+for {set i 0}  { $i < $n  } {incr i 50 } {
+
+    $wholebox frame $i
+    $wholebox update
+    $wholebox writepdb wholebox_$i.pdb
+
+    $protein frame $i
+    $protein update
+    $protein writepdb trpcage_$i.pdb
+
+}
+
+quit
